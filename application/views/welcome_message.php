@@ -74,13 +74,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
+	.pagination a,.pagination strong{
+		padding: 5px;
+		border: 1px solid #ccc;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+	.pagination strong{
+		background-color: #35a5f2;
+		color:#fff;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Kitap Listesi</h1>
+	<h1>İsim Listesi</h1>
+	<ul>
+	<?php foreach($results as $row) { ?>
+		<li><?= $row->title ?></li>
+	<?php } ?>
+	</ul>
 
+	<p class="pagination"><?= $links ?></p>
 	
 </div>
 
